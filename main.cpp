@@ -67,7 +67,7 @@ void ReplaceNegatives(int* arr,int size, std::string message = "") {
 int main() {
     // task 1
     ElementAboveAvg();
-
+    return 0;
 
     // task 2
     FirstPosition();
