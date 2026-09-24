@@ -30,5 +30,4 @@ int main() {
     // task 2
     FirstPosition();
     return 0;
-
 }
