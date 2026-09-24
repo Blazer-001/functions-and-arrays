@@ -71,9 +71,13 @@ int main() {
 
     // task 2
     FirstPosition();
-    return 0;
+
 
     // task 3
-    ReplaceNegatives();
+    int size{};
+    int* arr = new int[size];
+    ReplaceNegatives(arr, size, "Массив:");
 
+    delete[] arr;
+    return 0;
 }
