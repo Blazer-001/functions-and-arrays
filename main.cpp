@@ -1,9 +1,11 @@
 #include <iostream>
 
 // task 2
-void FirstPosition(int n, int x) {
+void FirstPosition() {
+    int n{}, x{};
     std::cin >> n;
     std::cin >> x;
+
     int *arr = new int[n];
     for (int i{}; i < n; ++i) {
         std::cin >> arr[i];
@@ -16,17 +18,17 @@ void FirstPosition(int n, int x) {
             break;
         }
     }
-    if (position != 1) {
+    if (position != -1) {
         std::cout << "Position: " << position << '\n';
-    }
-    else {
+    } else {
         std::cout << "Not foud" << '\n';
     }
     delete[] arr;
 }
 
-
 int main() {
-
-
+    // task 2
+    FirstPosition();
+    return 0;
+    
 }
