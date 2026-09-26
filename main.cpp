@@ -52,7 +52,7 @@ void FirstPosition() {
 }
 
 
-// task 3
+// task 5
 void ReplaceNegatives(int* arr,int size, std::string message = "") {
     if (!message.empty())
         std::cout << message << '\n';
@@ -73,7 +73,7 @@ int main() {
     FirstPosition();
 
 
-    // task 3
+    // task 5
     int size{};
     int* arr = new int[size];
     ReplaceNegatives(arr, size, "Массив:");
