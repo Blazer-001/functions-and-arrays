@@ -5,16 +5,16 @@ void ElementAboveAvg() {
     int n;
     std::cin >> n;
 
-    int* arr = new int[n];
+    int *arr = new int[n];
     long long sum = 0;
 
     for (int i{}; i < n; ++i) {
         std::cin >> arr[i];
         sum += arr[i];
     }
-    double average = (double) sum/n;
-    std::cout << "Average: " << average << '\n';
-    std::cout << "Above average: ";
+    double average = (double) sum / n;
+    std::cout << "Среднее: " << average << '\n';
+    std::cout << "Больше среднего: ";
 
     for (int i{}; i < n; ++i) {
         if (arr[i] > average) {
@@ -44,16 +44,16 @@ void FirstPosition() {
         }
     }
     if (position != -1) {
-        std::cout << "Position: " << position << '\n';
+        std::cout << "Позиция: " << position << '\n';
     } else {
-        std::cout << "Not foud" << '\n';
+        std::cout << "Не найдено" << '\n';
     }
     delete[] arr;
 }
 
 
-// task 3
-void ReplaceNegatives(int* arr,int size, std::string message = "") {
+// task 5
+void ReplaceNegatives(int *arr, int size, std::string message = "") {
     if (!message.empty())
         std::cout << message << '\n';
 
@@ -64,20 +64,43 @@ void ReplaceNegatives(int* arr,int size, std::string message = "") {
 }
 
 
+// task 6
+void ArrayReversal() {
+    int a;
+    std::cin >> a;
+
+    int *arr = new int[a];
+    for (int i{}; i < 5; ++i) {
+        std::cin >> arr[i];
+    }
+    for (int i = 4; i >= 0; --i) {
+        std::cout << arr[i] << " ";
+    }
+    delete[] arr;
+}
+
+
 int main() {
     // task 1
     ElementAboveAvg();
-    return 0;
+
 
     // task 2
     FirstPosition();
 
 
-    // task 3
+    // task 5
     int size{};
-    int* arr = new int[size];
+    int *arr = new int[size];
     ReplaceNegatives(arr, size, "Массив:");
 
     delete[] arr;
+
+
+    // task 6
+    ArrayReversal();
+    std::cout << "Ввод" << '\n';
+    std::cout << "Вывод" << '\n';
+
     return 0;
 }
