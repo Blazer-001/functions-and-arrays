@@ -53,11 +53,7 @@ void FirstPosition() {
 
 
 // task 5
-<<<<<<< HEAD
 void ReplaceNegatives(int *arr, int size, std::string message = "") {
-=======
-void ReplaceNegatives(int* arr,int size, std::string message = "") {
->>>>>>> d1ae83ffa8b79d6a6843b1c633ee9067879e8040
     if (!message.empty())
         std::cout << message << '\n';
 
@@ -87,11 +83,7 @@ void ArrayReversal() {
 int main() {
     // task 1
     ElementAboveAvg();
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> d1ae83ffa8b79d6a6843b1c633ee9067879e8040
 
     // task 2
     FirstPosition();
