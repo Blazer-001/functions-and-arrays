@@ -13,8 +13,8 @@ void ElementAboveAvg() {
         sum += arr[i];
     }
     double average = (double) sum / n;
-    std::cout << "Среднее: " << average << '\n';
-    std::cout << "Больше среднего: ";
+    std::cout << "Average: " << average << '\n';
+    std::cout << "Above Average: ";
 
     for (int i{}; i < n; ++i) {
         if (arr[i] > average) {
@@ -44,20 +44,16 @@ void FirstPosition() {
         }
     }
     if (position != -1) {
-        std::cout << "Позиция: " << position << '\n';
+        std::cout << "Position: " << position << '\n';
     } else {
-        std::cout << "Не найдено" << '\n';
+        std::cout << "Not found" << '\n';
     }
     delete[] arr;
 }
 
 
 // task 5
-<<<<<<< HEAD
 void ReplaceNegatives(int *arr, int size, std::string message = "") {
-=======
-void ReplaceNegatives(int* arr,int size, std::string message = "") {
->>>>>>> d1ae83ffa8b79d6a6843b1c633ee9067879e8040
     if (!message.empty())
         std::cout << message << '\n';
 
@@ -83,15 +79,21 @@ void ArrayReversal() {
     delete[] arr;
 }
 
+// task 7
+void LocalMax(const int *arr, int n) {
+    for (int i = 1; i < n -2; ++i) {
+        if (arr[i] > arr[i -1] && arr[i] > arr[i + 1]) {
+            std::cout << arr[i] << " ";
+        }
+    }
+    std::cout << '\n';
+}
+
 
 int main() {
     // task 1
     ElementAboveAvg();
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> d1ae83ffa8b79d6a6843b1c633ee9067879e8040
 
     // task 2
     FirstPosition();
@@ -100,15 +102,27 @@ int main() {
     // task 5
     int size{};
     int *arr = new int[size];
-    ReplaceNegatives(arr, size, "Массив:");
+    ReplaceNegatives(arr, size, "Array:");
 
     delete[] arr;
 
 
     // task 6
     ArrayReversal();
-    std::cout << "Ввод" << '\n';
-    std::cout << "Вывод" << '\n';
+    std::cout << "Input:" << '\n';
+    std::cout << "Output:" << '\n';
+
+    // task 7
+    int n;
+    std::cin >> n;
+
+    int *arr2 = new int[n];
+    for (int i{}; i < n; ++i) {
+        std::cin >> arr[i];
+    }
+    LocalMax(arr2,n);
+
+    delete[] arr2;
 
     return 0;
 }
