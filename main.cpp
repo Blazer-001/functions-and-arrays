@@ -105,37 +105,37 @@ int *Positives(const int *arr, int size, int& new_size) {
 
 int main() {
     // task 1
-    // ElementAboveAvg();
-    //
-    //
-    // // task 2
-    // FirstPosition();
-    //
-    //
-    // // task 5
-    // int size{};
-    // int *arr = new int[size];
-    // ReplaceNegatives(arr, size, "Array:");
-    //
-    // delete[] arr;
-    //
-    //
-    // // task 6
-    // ArrayReversal();
-    // std::cout << "Input:" << '\n';
-    // std::cout << "Output:" << '\n';
-    //
-    // // task 7
-    // int n;
-    // std::cin >> n;
-    //
-    // int *arr2 = new int[n];
-    // for (int i{}; i < n; ++i) {
-    //     std::cin >> arr[i];
-    // }
-    // LocalMax(arr2, n);
-    //
-    // delete[] arr2;
+    ElementAboveAvg();
+
+
+    // task 2
+    FirstPosition();
+
+
+    // task 5
+    int size{};
+    int *arr = new int[size];
+    ReplaceNegatives(arr, size, "Array:");
+
+    delete[] arr;
+
+
+    // task 6
+    ArrayReversal();
+    std::cout << "Input:" << '\n';
+    std::cout << "Output:" << '\n';
+
+    // task 7
+    int n;
+    std::cin >> n;
+
+    int *arr2 = new int[n];
+    for (int i{}; i < n; ++i) {
+        std::cin >> arr[i];
+    }
+    LocalMax(arr2, n);
+
+    delete[] arr2;
 
 
     // 10
