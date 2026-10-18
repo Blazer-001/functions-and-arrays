@@ -91,60 +91,89 @@ void LocalMax(const int *arr, int n) {
 }
 
 // 10.
-int *Positives(const int *arr, int size, int& new_size) {
+int *Positives(const int *arr, int size, int &new_size) {
     new_size = 0;
     int *positives = new int[new_size];
     for (int i{}; i < size; ++i)
         if (arr[i] > 0)
             ++new_size;
 
-    int* result = new int[new_size];
+    int *result = new int[new_size];
     int count = 0;
+}
 
+// 5. Минимум каждого столбца
+void MinColumnMatrix(int **matrix, int rows, int cols) {
+    for (int i{}; i < cols; ++i) {
+            int min = matrix[0][i];
+        for (int j{1}; j < rows; ++j)
+        if (matrix[j][i] < min)
+            min = matrix[j][i];
+        std::cout << min << ' ';
+    }
+    std::cout << '\n';
 }
 
 int main() {
     // task 1
-    // ElementAboveAvg();
-    //
-    //
-    // // task 2
-    // FirstPosition();
-    //
-    //
-    // // task 5
-    // int size{};
-    // int *arr = new int[size];
-    // ReplaceNegatives(arr, size, "Array:");
-    //
-    // delete[] arr;
-    //
-    //
-    // // task 6
-    // ArrayReversal();
-    // std::cout << "Input:" << '\n';
-    // std::cout << "Output:" << '\n';
-    //
-    // // task 7
-    // int n;
-    // std::cin >> n;
-    //
-    // int *arr2 = new int[n];
-    // for (int i{}; i < n; ++i) {
-    //     std::cin >> arr[i];
-    // }
-    // LocalMax(arr2, n);
-    //
-    // delete[] arr2;
+    ElementAboveAvg();
 
 
-    // 10
+    // task 2
+    FirstPosition();
+
+
+    // task 5
+    int size{};
+    int *arr = new int[size];
+    ReplaceNegatives(arr, size, "Array:");
+
+    delete[] arr;
+
+
+    // task 6
+    ArrayReversal();
+    std::cout << "Input:" << '\n';
+    std::cout << "Output:" << '\n';
+
+    // task 7
+    int n;
+    std::cin >> n;
+
+    int *arr2 = new int[n];
+    for (int i{}; i < n; ++i) {
+        std::cin >> arr[i];
+    }
+    LocalMax(arr2, n);
+
+    delete[] arr2;
+
+
+    // task 10
     const int SIZE = 6;
-    int *positives = new int[SIZE] {-1, 5, 0, 7, -3, 2};
+    int *positives = new int[SIZE]{-1, 5, 0, 7, -3, 2};
 
     int new_size = 0;
-    int* pos = Positives(positives, SIZE, new_size);
+    int *pos = Positives(positives, SIZE, new_size);
 
     delete[] positives;
     positives = nullptr;
+
+    // 5. Минимум каждого столбца
+    const int rows{4}, cols{4};
+
+    int **matrix = new int*[rows];
+    for (int i{}; i < rows; ++i) {
+        matrix[i] = new int[cols];
+        for (int j{}; j < cols; ++j)
+            std::cin >> matrix[i][j];
+    }
+
+    MinColumnMatrix(matrix, rows, cols);
+
+    for (int i{}; i < rows; ++i)
+        delete[] matrix[i];
+    delete[] matrix;
+
+    return 0;
 }
