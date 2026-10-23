@@ -93,22 +93,34 @@ void LocalMax(const int *arr, int n) {
 // 10.
 int *Positives(const int *arr, int size, int &new_size) {
     new_size = 0;
-    int *positives = new int[new_size];
-    for (int i{}; i < size; ++i)
-        if (arr[i] > 0)
+    const int *source = arr;
+    for (int i{}; i < size; ++i) {
+        if (*source > 0)
             ++new_size;
+        ++source;
+    }
 
     int *result = new int[new_size];
-    int count = 0;
+    int *result_ptr = result;
+    source = arr;
+    for (int i{}; i < size; ++i) {
+        if (*source > 0) {
+            *result_ptr = *source;
+            ++result_ptr;
+        }
+        ++source;
+    }
+
+    return result;
 }
 
 // 5. Минимум каждого столбца
 void MinColumnMatrix(int **matrix, int rows, int cols) {
     for (int i{}; i < cols; ++i) {
-            int min = matrix[0][i];
+        int min = matrix[0][i];
         for (int j{1}; j < rows; ++j)
-        if (matrix[j][i] < min)
-            min = matrix[j][i];
+            if (matrix[j][i] < min)
+                min = matrix[j][i];
         std::cout << min << ' ';
     }
     std::cout << '\n';
@@ -156,13 +168,18 @@ int main() {
     int new_size = 0;
     int *pos = Positives(positives, SIZE, new_size);
 
+    for (int i = 0; i < new_size; ++i)
+        std::cout << *(pos + i) << " ";
+    std::cout << std::endl;
+
     delete[] positives;
     positives = nullptr;
+    delete[] pos;
 
     // 5. Минимум каждого столбца
     const int rows{4}, cols{4};
 
-    int **matrix = new int*[rows];
+    int **matrix = new int *[rows];
     for (int i{}; i < rows; ++i) {
         matrix[i] = new int[cols];
         for (int j{}; j < cols; ++j)
